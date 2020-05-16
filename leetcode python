@@ -1,0 +1,22 @@
+class Solution:
+    def maxSubarraySumCircular(self, A: List[int]) -> int:
+        l=len(A)
+        if(l!=1):
+            for x in A[:l-1]:
+                A.append(x)
+            #print(A)
+            m=[]
+            for i in range(2*l-2):
+                for j in range(i+1,2*l):
+                    #print(A[i:j]
+                    if(len(A[i:j])<=l):
+                        #s=sum(A[i:j])
+                        m.append(sum(A[i:j]))
+            #print(max(m))
+            return max(m)
+        else:
+            return A[0]
+                
+            
+        
+        
